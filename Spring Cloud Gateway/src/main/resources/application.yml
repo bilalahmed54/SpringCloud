@@ -1,0 +1,20 @@
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: 1
+        uri: lb://eureka-feign-application-client
+        predicates:
+        - Path=/feign-client/**
+        filters:
+        - RewritePath=/feign-client/(?<path>.*), /$\{path}
+      - id: 2
+        uri: lb://eureka-service-client
+        predicates:
+        - Path=/application-client/**
+        filters:
+        - RewritePath=/appl4ication-client/(?<path>.*), /$\{path}
