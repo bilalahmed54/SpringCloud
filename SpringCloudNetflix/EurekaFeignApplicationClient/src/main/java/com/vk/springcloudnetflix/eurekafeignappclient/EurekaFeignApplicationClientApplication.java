@@ -2,13 +2,11 @@ package com.vk.springcloudnetflix.eurekafeignappclient;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import zipkin.server.EnableZipkinServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@EnableZipkinServer
 @EnableFeignClients
 @SpringBootApplication
 @EnableDiscoveryClient
